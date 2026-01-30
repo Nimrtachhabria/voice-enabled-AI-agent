@@ -8,57 +8,111 @@ Users can speak their question in real time, the system converts speech to text,
 **🧠 Architecture Diagram (Text Version)**
 
 +--------------------------------------------------+
+
 |                  USER BROWSER                    |
+
 |                                                  |
-|   🎤 Voice Input     ⌨ Text Input              |
+
+|   🎤 Voice Input     ⌨ Text Input               |
+
+|                                                   |
+
 |   🔊 Browser Text-to-Speech                     |
+
 +-------------------------+------------------------+
+
                           |
+                          
                           v
+                          
 +--------------------------------------------------+
+
 |               STREAMLIT FRONTEND                 |
+
 |                 agent_app.py                     |
+
 |                                                  |
+
 | - UI handling                                    |
+
 | - Session state                                  |
+
 | - Input validation                               |
+
 +-------------------------+------------------------+
+
                           |
+                          
                           v
+                          
 +--------------------------------------------------+
+
 |           SPEECH TO TEXT (DEEPGRAM)              |
+
 |                                                  |
+
 |   Audio (.wav) → Transcript (text)               |
+
 +-------------------------+------------------------+
+
                           |
+                          
                           v
+                          
 +--------------------------------------------------+
+
 |              RAG PIPELINE                         |
+
 |                                                   |
+
 |  - Text Chunking                                  |
+
 |  - Embeddings (HuggingFace)                       |
+
 |  - Vector Search (Chroma DB)                      |
+
 |                                                   |
+
 |  Output: Relevant Context                         |
+
 +-------------------------+------------------------+
+
                           |
+                          
                           v
+                          
 +--------------------------------------------------+
+
 |               LLM ORCHESTRATION                   |
+
 |                                                   |
+
 |   🤖 Gemini                                       |
+
 |                                                   |
+
 |   🤖 DeepSeek                                     |
+
 |                                                   |
+
 |  Prompt = Context + User Query                    |
+
 +-------------------------+------------------------+
+
                           |
+                          
                           v
+                          
 +--------------------------------------------------+
+
 |              RESPONSE OUTPUT                      |
+
 |                                                   |
+
 |  - Text responses                                 |
+
 |  - Browser speech synthesis                       |
+
 +--------------------------------------------------+
 
 **✨ Features**
