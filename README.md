@@ -11,18 +11,15 @@ Users can speak their question in real time, the system converts speech to text,
 
 |                  USER BROWSER                    |
 
-|                                                  |
-
 |   🎤 Voice Input     ⌨ Text Input               |
 
-|                                                   |
 
 |   🔊 Browser Text-to-Speech                     |
 
 +-------------------------+------------------------+
 
                           |
-                          
+                      
                           v
                           
 +--------------------------------------------------+
@@ -30,8 +27,7 @@ Users can speak their question in real time, the system converts speech to text,
 |               STREAMLIT FRONTEND                 |
 
 |                 agent_app.py                     |
-
-|                                                  |
+                                          
 
 | - UI handling                                    |
 
@@ -49,8 +45,6 @@ Users can speak their question in real time, the system converts speech to text,
 
 |           SPEECH TO TEXT (DEEPGRAM)              |
 
-|                                                  |
-
 |   Audio (.wav) → Transcript (text)               |
 
 +-------------------------+------------------------+
@@ -63,15 +57,11 @@ Users can speak their question in real time, the system converts speech to text,
 
 |              RAG PIPELINE                         |
 
-|                                                   |
-
 |  - Text Chunking                                  |
 
 |  - Embeddings (HuggingFace)                       |
 
 |  - Vector Search (Chroma DB)                      |
-
-|                                                   |
 
 |  Output: Relevant Context                         |
 
@@ -85,15 +75,11 @@ Users can speak their question in real time, the system converts speech to text,
 
 |               LLM ORCHESTRATION                   |
 
-|                                                   |
 
 |   🤖 Gemini                                       |
 
-|                                                   |
 
 |   🤖 DeepSeek                                     |
-
-|                                                   |
 
 |  Prompt = Context + User Query                    |
 
@@ -106,8 +92,6 @@ Users can speak their question in real time, the system converts speech to text,
 +--------------------------------------------------+
 
 |              RESPONSE OUTPUT                      |
-
-|                                                   |
 
 |  - Text responses                                 |
 
@@ -155,7 +139,7 @@ TTS	Browser SpeechSynthesis
 
 Backend	Python
 
-⚙️ Setup Instructions
+**⚙️ Setup Instructions**
 
 1️⃣ Clone Repository
 
@@ -185,7 +169,7 @@ python ingest.py
 
 streamlit run agent_app.py
 
-⚠️ Limitations
+**⚠️ Limitations**
 
 These are known limitations of the current system:
 
