@@ -134,7 +134,7 @@ if st.session_state.query and st.session_state.show_results:
 
     with st.spinner("Searching school website content..."):
         retriever = get_retriever()
-        docs = retriever.get_relevant_documents(st.session_state.query)
+        docs = retriever.invoke(st.session_state.query)
 
         if len(docs) == 0:
             context = ""
@@ -184,6 +184,7 @@ If not found, say you do not have that information.
         st.session_state.query = ""
         st.session_state.show_results = False
         st.rerun()
+
 
 
 
